@@ -3,6 +3,12 @@
   src: url('bolts_sf.ttf');
 }
 
+@font-face {
+  font-family: "Proxima Nova";
+  src: url('proxima-nova.otf');
+}
+
+
 header {
   background-color: #d84314;
   color: white;
@@ -23,6 +29,10 @@ header a {
   font-size: large;
 }
 
-#main-content {
+#main-container {
   padding: 2em;
+}
+
+#app-container {
+  font-family: "Proxima Nova";
 }
