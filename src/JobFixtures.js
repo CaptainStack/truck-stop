@@ -1,4 +1,4 @@
-const jobs = [
+export const jobs = [
   {
     title: 'Coals to Newcastle',
     referenceId: '18615',

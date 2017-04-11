@@ -1,13 +1,12 @@
 import React from 'react';
 
-const JobsBox = () => {
+const JobsBox = ({ jobs }) => {
+  let job_elements = jobs.map(job => <li>{job.title}</li>);
   return (
     <div className={'jobs-box'} >
       <h1>Jobs</h1>
       <ul>
-        <li>Seattle</li>
-        <li>Portland</li>
-        <li>San Francisco</li>
+        { job_elements }
       </ul>
     </div>
   );
