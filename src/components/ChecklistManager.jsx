@@ -2,12 +2,11 @@ import React from 'react';
 import JobsBox from './JobsBox';
 import StopsBox from './StopsBox';
 import TasksBox from './TasksBox';
-import { jobs } from '../JobFixtures';
 
-const ChecklistManager = () => {
+const ChecklistManager = ({jobs}) => {
   return (
     <div className={'checklist-manager'} >
-      <JobsBox jobs={ jobs }/>
+      <JobsBox jobs={jobs}/>
       <StopsBox />
       <TasksBox />
     </div>
