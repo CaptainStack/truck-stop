@@ -5,8 +5,14 @@ import './index.css';
 import {createStore} from 'redux';
 import reducer from './reducer';
 
-
 export const store = createStore(reducer);
+
 const render = () => ReactDOM.render(<App state={store.getState()} />, document.getElementById('root'));
+
+store.subscribe(()=>{
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+})
+
 render();
 store.subscribe(render);
+
