@@ -9,7 +9,7 @@ const App = ({state}) => {
         <h2><a href='.'>TRUCK STOP</a></h2>
       </header>
       <div id='main-container'>
-        <ChecklistManager jobs={state} />
+        <ChecklistManager jobs={state.jobs} />
         <footer>
           <div><a href='https://captainstack.github.io/public-stackhouse' target='_blank'><p>© 2017 by Andre Stackhouse</p></a></div>
           <div><a href='https://github.com/CaptainStack/truck-stop' target='_blank'><p>View source on GitHub</p></a></div>

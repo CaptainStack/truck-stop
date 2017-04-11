@@ -1,3 +1,7 @@
 import {jobs} from './JobFixtures';
 
-export const INITIAL_STATE = jobs;
+export const INITIAL_STATE = 
+  {
+    jobs: jobs,
+    selected_job: {}
+  };
