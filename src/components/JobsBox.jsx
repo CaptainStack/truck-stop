@@ -4,7 +4,7 @@ import { jobClick } from '../events';
 const JobsBox = ({jobs, selected_job}) => {
   let job_elements = jobs.map(job => {
     let classes = '';
-    if (jobs === selected_job) {
+    if (job === selected_job) {
       classes += 'selected ';
     }
 
