@@ -1,14 +1,12 @@
 import React from 'react';
+import { taskClick } from '../events';
 
 const TasksBox = ({stop}) => {
-  let tasks;
-  if (stop.type) {
-    tasks = stop.type === 'PICKUP' ? ['Receive Bill of Lading'] : ['Bill of Lading Signed'];
-    tasks.unshift('Photograph Inventory');
-  } else {
-    tasks = ['Please select a job and stop'];
+  let task_elements;
+  if (stop.tasks) {
+    let tasks = stop.tasks;
+    task_elements = tasks.map(task => <li onClick={taskClick(task)} className={task.completed ? 'completed' : null}>{task.description}</li>);
   }
-  let task_elements = tasks.map(task => <li>{task}</li>);
   return (
     <div className={'tasks-box'} >
       <h1>Tasks</h1>

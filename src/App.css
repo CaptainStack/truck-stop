@@ -41,3 +41,7 @@ header a {
 .selected {
   color: red;
 }
+
+.completed {
+  text-decoration: line-through;
+}

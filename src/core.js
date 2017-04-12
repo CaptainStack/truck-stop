@@ -1,9 +1,13 @@
 import {jobs} from './JobFixtures';
 
+let persistedState;
+
 // Rebuild the redux state by parsing the JSON string in localStorage
-let persistedState = JSON.parse(localStorage.getItem('reduxState'));
-persistedState.selected_job = persistedState.jobs.find(job => job.referenceId === persistedState.selected_job.referenceId);
-persistedState.selected_stop = persistedState.selected_job.stops.find(stop => stop.type === persistedState.selected_stop.type);
+if (localStorage.getItem('reduxState')) {
+  persistedState = JSON.parse(localStorage.getItem('reduxState'));
+  persistedState.selected_job = persistedState.jobs.find(job => job.referenceId === persistedState.selected_job.referenceId);
+  persistedState.selected_stop = persistedState.selected_job.stops.find(stop => stop.type === persistedState.selected_stop.type);
+}
 
 export const INITIAL_STATE = localStorage.getItem('reduxState') ? persistedState :
   {
@@ -22,5 +26,10 @@ export const update_active_job = (state, job) => {
 
 export const update_active_stop = (state, stop) => {
   state.selected_stop = stop;
+  return state;
+}
+
+export const update_clicked_task = (state, task) => {
+  task.completed ? task.completed = false : task.completed = true;
   return state;
 }

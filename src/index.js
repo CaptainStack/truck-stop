@@ -9,10 +9,6 @@ export const store = createStore(reducer);
 
 const render = () => ReactDOM.render(<App state={store.getState()} />, document.getElementById('root'));
 
-store.subscribe(()=>{
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-})
-
 render();
 store.subscribe(render);
-
+store.subscribe(() => localStorage.setItem('reduxState', JSON.stringify(store.getState())));
