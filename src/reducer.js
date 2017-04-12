@@ -1,4 +1,4 @@
-import {update_active_job, update_active_stop, update_clicked_task, INITIAL_STATE} from './core';
+import {update_active_job, update_active_stop, update_clicked_task, update_task_filter, INITIAL_STATE} from './core';
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -8,6 +8,8 @@ export default function reducer(state = INITIAL_STATE, action) {
       return update_active_stop(state, action.stop);
     case 'UPDATE_SELECTED_TASK':
       return update_clicked_task(state, action.task);
+    case 'UPDATE_FILTER':
+      return update_task_filter(state, action.filter);
     default:
       return state;
   }
