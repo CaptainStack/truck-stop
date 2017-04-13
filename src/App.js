@@ -1,6 +1,6 @@
 import React from 'react';
 import ChecklistManager from './components/ChecklistManager';
-import './App.css';
+import './styles/App.css';
 
 const App = ({state}) => {
   return (

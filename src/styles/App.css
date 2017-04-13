@@ -42,9 +42,9 @@ footer a:hover {
 
 @font-face {
   font-family: "Bolts SF";
-  src: url('bolts_sf.ttf');
+  src: url('../fonts/bolts_sf.ttf');
 }
 @font-face {
   font-family: "Proxima Nova";
-  src: url('proxima-nova.otf');
+  src: url('../fonts/proxima-nova.otf');
 }
