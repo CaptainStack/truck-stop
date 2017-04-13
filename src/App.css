@@ -61,3 +61,15 @@ table.active-job {
 table.complete-job {
   background-color: LightCyan;
 }
+
+#clock{
+    background-image:url('');
+    background-size:cover;
+    background-position: center;
+    height: 250px; width: 250px;
+    border: 1px solid #bbb;
+}
+
+.photograph {
+  width: 100%;
+}

@@ -23,6 +23,7 @@ const ChecklistManager = ({state}) => {
       return null;
     }
   });
+  
   return (
     <div className={'checklist-manager'} >
       <h2>Showing {state.tasks_shown} jobs</h2>

@@ -34,6 +34,7 @@ export const update_clicked_task = (state, task, GPS) => {
   if (task.completed) {
     task.completed = false;
     task.GPS = null;
+    task.photo = null;
   } else {
     task.completed = Date.now();
     task.GPS = GPS;
@@ -43,5 +44,10 @@ export const update_clicked_task = (state, task, GPS) => {
 
 export const update_task_filter = (state, filter) => {
   state.tasks_shown = filter;
+  return state;
+}
+
+export const add_image_to_task = (state, task, image) => {
+  task.photo = image;
   return state;
 }

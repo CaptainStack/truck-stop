@@ -21,3 +21,7 @@ export const taskClick = clicked_task => e => {
 export const filterClick = clicked_filter => e => {
   store.dispatch({ type: 'UPDATE_FILTER', filter: clicked_filter });
 }
+
+export const saveImage = (task, image) => {
+  store.dispatch({ type: 'ADD_IMAGE_TO_TASK', task: task, image: image });
+}
