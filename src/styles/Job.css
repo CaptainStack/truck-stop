@@ -1,0 +1,15 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  transition: 0.5s;
+}
+table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+table.active-job {
+  background-color: OldLace;
+}
+table.complete-job {
+  background-color: LightCyan;
+}

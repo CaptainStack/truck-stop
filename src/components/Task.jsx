@@ -1,5 +1,6 @@
 import React from 'react';
 import { taskClick, saveImage } from '../events';
+import '../styles/Task.css';
 
 const Task = ({task}) => {
   let button;
@@ -46,7 +47,6 @@ const Task = ({task}) => {
       <div>{location_string}</div>
       <div>{photo_button}</div>
       <div>{photo_viewer}</div>
-      
     </td>
   );
 };

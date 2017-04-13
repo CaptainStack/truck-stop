@@ -1,5 +1,6 @@
 import React from 'react';
 import Stop from './Stop';
+import '../styles/Job.css';
 
 const Job = ({job, job_complete}) => {
   let job_status = job_complete ? 'Completed' : 'Active';
