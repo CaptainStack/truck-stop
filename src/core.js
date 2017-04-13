@@ -19,17 +19,6 @@ export const INITIAL_STATE = localStorage.getItem('reduxState') ? persistedState
     tasks_shown: 'all'
   };
 
-export const update_active_job = (state, job) => {
-  state.selected_job = job;
-  state.selected_stop = job.stops[0];
-  return state;
-}
-
-export const update_active_stop = (state, stop) => {
-  state.selected_stop = stop;
-  return state;
-}
-
 export const update_clicked_task = (state, task, GPS) => {
   if (task.completed) {
     task.completed = false;
