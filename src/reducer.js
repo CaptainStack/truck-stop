@@ -7,7 +7,7 @@ export default function reducer(state = INITIAL_STATE, action) {
     case 'UPDATE_SELECTED_STOP':
       return update_active_stop(state, action.stop);
     case 'UPDATE_SELECTED_TASK':
-      return update_clicked_task(state, action.task);
+      return update_clicked_task(state, action.task, action.GPS);
     case 'UPDATE_FILTER':
       return update_task_filter(state, action.filter);
     default:

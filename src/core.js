@@ -7,14 +7,14 @@ if (localStorage.getItem('reduxState')) {
   persistedState = JSON.parse(localStorage.getItem('reduxState'));
   persistedState.selected_job = 
     persistedState.jobs.find(job => job.referenceId === persistedState.selected_job.referenceId) ||
-    { title: 'NO JOB SELECTED', stops: [ {address: 'SELECT A JOB TO VIEW STOPS', tasks: [{completed: false}]} ] };
+    { title: 'NO JOB SELECTED', stops: [ {address: 'SELECT A JOB TO VIEW STOPS', tasks: [{completed: false, GPS: null}]} ] };
   persistedState.selected_stop = persistedState.selected_job.stops.find(stop => stop.type === persistedState.selected_stop.type);
 }
 
 export const INITIAL_STATE = localStorage.getItem('reduxState') ? persistedState :
   {
     jobs: jobs,
-    selected_job: { title: 'NO JOB SELECTED', stops: [ {address: 'SELECT A JOB TO VIEW STOPS', tasks: [{completed: false}]} ] },
+    selected_job: { title: 'NO JOB SELECTED', stops: [ {address: 'SELECT A JOB TO VIEW STOPS', tasks: [{completed: false, GPS: null}]} ] },
     selected_stop: {},
     tasks_shown: 'all'
   };
@@ -30,8 +30,14 @@ export const update_active_stop = (state, stop) => {
   return state;
 }
 
-export const update_clicked_task = (state, task) => {
-  task.completed ? task.completed = false : task.completed = true;
+export const update_clicked_task = (state, task, GPS) => {
+  if (task.completed) {
+    task.completed = false;
+    task.GPS = null;
+  } else {
+    task.completed = Date.now();
+    task.GPS = GPS;
+  }
   return state;
 }
 
