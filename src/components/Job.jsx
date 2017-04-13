@@ -5,7 +5,7 @@ import '../styles/Job.css';
 const Job = ({job, job_complete}) => {
   let job_status = job_complete ? 'Completed' : 'Active';
   let stops = job.stops.map(stop => {
-    return <Stop stop={stop} remainingTasks={stop.tasks.filter(task => !task.completed).length} />
+    return <Stop stop={stop}/>
   });
   return (
     <div>

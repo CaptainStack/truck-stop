@@ -13,10 +13,10 @@ const Stop = ({stop}) => {
   
   switch(incomplete_tasks_count) {
     case 0:
-      stop_status = 'Not started';
+      stop_status = 'Completed';
       break;
     case stop.tasks.length:
-      stop_status = 'Completed';
+      stop_status = 'Not Started';
       break;
     default:
       stop_status = 'In progress';
