@@ -4,6 +4,7 @@ import { taskClick, saveImage } from '../events';
 const Task = ({task}) => {
   let button;
   let photo_button;
+  let photo_viewer;
   let datetime_string = '[Date & time of completion]';
   let class_name;
   let button_symbol = '\u2713';
@@ -33,6 +34,7 @@ const Task = ({task}) => {
   } else {
     button = <button onClick={taskClick(task)}>{button_symbol}</button>;
     photo_button = <input type='file' onChange={readURL}></input>;
+    photo_viewer = <a className={'photograph'} href={task.photo} target='_'>[View photograph]</a>;
   }
 
   let location_string = task.GPS ? `Coords(${Math.floor(task.GPS.latitude)}, ${Math.floor(task.GPS.longitude)})` : '[Location on completion]';
@@ -43,7 +45,8 @@ const Task = ({task}) => {
       <div>{datetime_string}</div>
       <div>{location_string}</div>
       <div>{photo_button}</div>
-      <a className={'photograph'} href={task.photo} target='_'>[View photograph]</a>
+      <div>{photo_viewer}</div>
+      
     </td>
   );
 };
